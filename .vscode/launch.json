@@ -9,7 +9,8 @@
             "type": "python",
             "request": "launch",
             "program": "${file}",
-            "console": "integratedTerminal"
+            "console": "integratedTerminal",
+            "args": ["grafo.json", "-a", "-s=salida.mp4", "--gravity=10"]
         }
     ]
 }
