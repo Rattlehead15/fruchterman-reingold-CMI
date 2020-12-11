@@ -169,6 +169,12 @@ class LayoutGraph:
             if self.verbose:
                 print(f"\t{v}: {self.posiciones[v]}")
 
+def read_graph(file):
+    lines = file.readlines()
+    n = int(lines[0])
+    vertices = [x.strip() for x in lines[1:(n + 1)]]
+    edges = [s.split() for s in lines[n+1:]]
+    return [vertices, edges]
 
 def main():
     # Definimos los argumentos de linea de comando que aceptamos
@@ -248,7 +254,7 @@ def main():
     )
 
     args = parser.parse_args()
-    grafo = json.load(args.file)
+    grafo = read_graph(args.file)
 
     # Creamos nuestro objeto LayoutGraph
     layout_gr = LayoutGraph(
