@@ -2,7 +2,7 @@
 
 # 6ta Practica Laboratorio 
 # Complementos Matematicos I
-# Ejemplo parseo argumentos
+# Garavano Lautaro, Spoletini Bruno
 
 import argparse
 import matplotlib.pyplot as plt
@@ -138,8 +138,8 @@ class LayoutGraph:
                     if distance < 0.05:
                         if self.verbose:
                             print("Distancia cercana a 0, aplicando fuerza de repulsion")
-                        self.acum[v1] -= 1
-                        self.acum[v2] += 1
+                        self.acum[v1] += np.random.rand()*2-1
+                        self.acum[v2] += np.random.rand()*2-1
                     else:
                         mod_fr_over_distance = (self.k1 / distance) ** 2
                         force_vector = mod_fr_over_distance * edge_vector
