@@ -138,8 +138,9 @@ class LayoutGraph:
                     if distance < 0.05:
                         if self.verbose:
                             print("Distancia cercana a 0, aplicando fuerza de repulsion")
-                        self.acum[v1] += np.random.rand()*2-1
-                        self.acum[v2] += np.random.rand()*2-1
+                        randforce = np.random.rand(2)
+                        self.acum[v1] += randforce
+                        self.acum[v2] -= randforce
                     else:
                         mod_fr_over_distance = (self.k1 / distance) ** 2
                         force_vector = mod_fr_over_distance * edge_vector
